@@ -1,0 +1,10 @@
+.drawer_scroll {
+  flex: 1;
+  overflow: scroll;
+}
+
+.side_lists {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
