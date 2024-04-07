@@ -34,12 +34,12 @@ function Message({ handleSubmit, selectedCategory, isLoading }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           disabled={!selectedCategory} // selectedCategoryが空または未定義の場合に無効にする
-          color="success"
+          color="primary"
         />
         <Button
           type="submit"
           variant="contained"
-          color="success"
+          color="primary"
           className={styles.btn}
           disabled={textSendBtnIs && !isLoading ? false : true}
         >

@@ -48,7 +48,7 @@ const Header = ({
   return (
     <div>
       {" "}
-      <AppBar open={drawerOpen} color="success">
+      <AppBar open={drawerOpen} color="primary">
         <Toolbar>
           <IconButton
             color="inherit"

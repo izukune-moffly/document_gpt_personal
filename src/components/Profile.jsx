@@ -21,8 +21,10 @@ function Profile() {
               <AccountCircleIcon />
             </ListItemIcon>
             <div>
-              <ListItemText primary={"John Doe"} />
-              <p className={styles.mail}>example@gmail.com</p>
+              <ListItemText primary={process.env.NEXT_PUBLIC_COMPANY} />
+              <p className={styles.mail}>
+                {process.env.NEXT_PUBLIC_COMPANY}@example.com
+              </p>
             </div>
           </ListItemButton>
         </ListItem>

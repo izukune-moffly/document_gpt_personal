@@ -21,7 +21,18 @@ const postFetcher = (url, data) =>
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  }).then((res) => res.json());
+  })
+    .then((res) => {
+      if (!res.ok) {
+        // レスポンスがokではない場合、エラーをスロー
+        throw new Error("サーバーからのエラーレスポンス: " + res.status);
+      }
+      return res.json();
+    })
+    .catch((error) => {
+      // ネットワークエラーやサーバーエラーの場合、ここが実行される
+      // alert("エラーが発生しました: " + error.message);
+    });
 
 export default function PersistentDrawerLeft() {
   // テーマ
@@ -53,9 +64,13 @@ export default function PersistentDrawerLeft() {
 
   // 会社とカテゴリの状態とAPIからの取得
   // - 会社名を初期化
-  const [selectedCompany, setSelectedCompany] = useState(process.env.NEXT_PUBLIC_COMPANY);
+  const [selectedCompany, setSelectedCompany] = useState(
+    process.env.NEXT_PUBLIC_COMPANY
+  );
   // エンドポイントの初期化
-  const [apiEndpoint, setApiEndpoint] = useState(process.env.NEXT_PUBLIC_API_URL);
+  const [apiEndpoint, setApiEndpoint] = useState(
+    process.env.NEXT_PUBLIC_API_URL
+  );
 
   // - APIでカテゴリデータの取得
   const { data: category_data, category_error } = useSWR(

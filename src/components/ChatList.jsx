@@ -25,7 +25,7 @@ function ChatList({ message, isGPT, answer_data, isLoading, isLastList }) {
   return (
     <div
       className={styles.container}
-      style={isGPT ? null : { backgroundColor: "rgba(220, 243, 232, 0.5)" }}
+      style={isGPT ? null : { backgroundColor: "rgba(33, 150, 232, 0.15)" }}
     >
       <div className={styles.wrapper}>
         <div className={styles.left}>

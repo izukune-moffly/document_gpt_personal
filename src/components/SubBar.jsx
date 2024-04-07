@@ -47,7 +47,7 @@ function SubBar({
           value={threadName}
           onChange={handleTitleChange}
         />
-        <Button variant="contained" onClick={clickSaveButton} color="success">
+        <Button variant="contained" onClick={clickSaveButton} color="primary">
           保存
         </Button>
       </div>
@@ -73,8 +73,8 @@ function SubBar({
             ))}
           </Select>
         </FormControl>
-        <Button variant="text" color="success" onClick={handleModalOpen}>
-          <CloudUploadIcon color="success" fontSize="large" />
+        <Button variant="text" color="primary" onClick={handleModalOpen}>
+          <CloudUploadIcon color="primary" fontSize="large" />
         </Button>
       </div>
     </div>

@@ -10,7 +10,7 @@ function AddButton({ onClick }) {
       <Button
         variant="contained"
         onClick={onClick}
-        color="success"
+        color="primary"
         style={{
           width: "100%",
           padding: "12px 16px",
