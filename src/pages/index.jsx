@@ -31,7 +31,7 @@ export default function Home() {
     if (data.authenticated) {
       setAuthenticated(true);
     } else if (res.status == 403) {
-      setError("IPアドレス制限がかかっています");
+      setError("IPアドレス制限がかかっています。");
     } else {
       setError("IDまたはパスワードが間違っています。");
     }

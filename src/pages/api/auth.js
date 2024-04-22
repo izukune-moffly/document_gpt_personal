@@ -1,14 +1,14 @@
-const ALLOWED_IP = "35.75.48.236"; // 許可するIPアドレスを指定
+// const ALLOWED_IP = ["35.75.48.236", "150.147.67.132"]; // 許可するIPアドレスを指定
 
 const auth = (req, res) => {
   // クライアントのIPアドレスを取得
   const clientIp =
     req.headers["x-forwarded-for"] || req.connection.remoteAddress;
 
-  if (clientIp !== ALLOWED_IP) {
-    // 許可されていないIPアドレスからのリクエストの場合、エラーを返す
-    return res.status(403).send({ error: "Access denied" });
-  }
+  // if (clientIp in ALLOWED_IP) {
+  //   // 許可されていないIPアドレスからのリクエストの場合、エラーを返す
+  //   return res.status(403).send({ error: "Access denied" });
+  // }
 
   if (req.method === "POST") {
     const { password } = req.body;
